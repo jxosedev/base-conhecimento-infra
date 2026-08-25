@@ -2,8 +2,8 @@ site_name: Base de Conhecimento - Infraestrutura
 site_description: Documentacao de suporte, infraestrutura e runbooks
 site_author: Time de Infraestrutura
 
-repo_name: empresa/base-conhecimento-infra
-repo_url: https://github.com/empresa/base-conhecimento-infra
+repo_name: jxosedev/base-conhecimento-infra
+repo_url: https://github.com/jxosedev/base-conhecimento-infra
 
 theme:
   name: material
@@ -104,7 +104,7 @@ markdown_extensions:
   - pymdownx.escapeall
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: empresa
+      user: jxosedev
       repo: base-conhecimento-infra
 
 extra_css:
