@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Base de Conhecimento"
+    url: https://jxosedev.github.io/base-conhecimento-infra/
+    about: "Acesse a documentacao antes de abrir um issue"
+  - name: "Canal Slack"
+    url: https://empresa.slack.com/channels/infra-docs
+    about: "Duvidas rapidas sobre documentacao"

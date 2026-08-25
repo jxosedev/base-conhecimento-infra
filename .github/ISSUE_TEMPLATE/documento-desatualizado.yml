@@ -1,0 +1,42 @@
+name: "Documento Desatualizado ou Quebrado"
+description: "Reportar documento com informacao incorreta ou link quebrado"
+title: "[BUG] "
+labels: documentation, bug
+assignees: ""
+body:
+  - type: input
+    id: pagina
+    attributes:
+      label: "Pagina afetada"
+      placeholder: "Ex: infra/servidores/webapp-prod-01/"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problema
+    attributes:
+      label: "Tipo de problema"
+      options:
+        - Informacao incorreta ou desatualizada
+        - Link quebrado (404)
+        - Formatacao quebrada
+        - Comando nao funciona mais
+        - Dados sensiveis expostos
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: "Descricao do problema"
+      placeholder: "Descreva o que esta errado e qual o valor correto (se souber)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: sugestao
+    attributes:
+      label: "Sugestao de correcao (opcional)"
+    validations:
+      required: false

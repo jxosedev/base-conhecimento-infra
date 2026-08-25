@@ -1,0 +1,70 @@
+name: "Nova Documentacao"
+description: "Solicitar criacao de nova pagina de documentacao"
+title: "[DOC] "
+labels: documentation, enhancement
+assignees: ""
+body:
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: "Tipo de documento"
+      options:
+        - Servidor
+        - Runbook (incidente)
+        - Runbook (manutencao)
+        - POP (procedimento operacional)
+        - Politica
+        - Guia de troubleshooting
+        - Outro
+    validations:
+      required: true
+
+  - type: input
+    id: titulo
+    attributes:
+      label: "Titulo do documento"
+      placeholder: "Ex: Servidor db-prod-01, POP de backup, Run queda de link"
+    validations:
+      required: true
+
+  - type: input
+    id: secao
+    attributes:
+      label: "Secao / Caminho desejado"
+      placeholder: "Ex: infra/servidores/, runbooks/incidentes/, pop/"
+    validations:
+      required: true
+
+  - type: textarea
+    id: conteudo
+    attributes:
+      label: "Resumo do conteudo esperado"
+      description: "Descreva brevemente o que deve conter no documento"
+      placeholder: |
+        Ex: Documentar o servidor db-prod-01 com:
+        - Hardware (CPU, RAM, Disco)
+        - SO e versao
+        - Servicos (PostgreSQL 15, pgBouncer)
+        - Politica de backup
+        - Contatos de responsavel
+    validations:
+      required: true
+
+  - type: dropdown
+    prioridade
+    attributes:
+      label: "Prioridade"
+      options:
+        - Normal
+        - Alta (falta documentacao critica)
+        - Baixa (melhoria)
+    validations:
+      required: false
+
+  - type: textarea
+    id: extras
+    attributes:
+      label: "Informacoes adicionais"
+      description: "Links, anexos, referencias"
+    validations:
+      required: false
