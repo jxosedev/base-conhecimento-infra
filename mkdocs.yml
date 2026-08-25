@@ -1,0 +1,146 @@
+site_name: Base de Conhecimento - Infraestrutura
+site_description: Documentacao de suporte, infraestrutura e runbooks
+site_author: Time de Infraestrutura
+
+repo_name: empresa/base-conhecimento-infra
+repo_url: https://github.com/empresa/base-conhecimento-infra
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Alternar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Alternar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - announce.dismiss
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    logo: material/server
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+markdown_extensions:
+  # --- PYTHON-MARKDOWN BASE ---
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+      permalink_class: headerlink
+      permalink_title: "Link direto"
+
+  # --- PYMDOWNX: BLOCOS E ESTRUTURA ---
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - docs/includes/snippets.md
+
+  # --- PYMDOWNX: TABELAS E LISTAS ---
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # --- PYMDOWNX: EMOJI E ICONES ---
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  # --- PYMDOWNX: MATEMATICNA ---
+  - pymdownx.arithmatex:
+      generic: true
+
+  # --- PYMDOWNX: OUTROS ---
+  - pymdownx.critic
+  - pymdownx.escapeall
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: empresa
+      repo: base-conhecimento-infra
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/empresa
+    - icon: fontawesome/brands/slack
+      link: https://empresa.slack.com
+  generator: false
+
+nav:
+  - Inicio: index.md
+  - Guia de Uso:
+      - Primeiros Passos: guia/primeiros-passos.md
+      - Como Contribuir: guia/como-contribuir.md
+      - Padrao de Documentacao: guia/padrao-documentacao.md
+  - Infraestrutura:
+      - Servidores: infra/servidores/README.md
+      - Rede: infra/rede/README.md
+      - Armazenamento: infra/armazenamento/README.md
+      - Cloud: infra/cloud/README.md
+  - Runbooks:
+      - Incidentes: runbooks/incidentes/README.md
+      - Manutencoes: runbooks/manutencoes/README.md
+      - Backups: runbooks/backups/README.md
+  - Procedimentos (POP):
+      - Onboarding: pop/onboarding.md
+      - Offboarding: pop/offboarding.md
+      - Acesso a Producao: pop/acesso-producao.md
+  - Politicas:
+      - Seguranca: politicas/seguranca.md
+      - Backup: politicas/backup.md
+      - Escalonamento: politicas/escalonamento.md

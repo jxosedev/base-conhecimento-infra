@@ -1,0 +1,11 @@
+site/
+__pycache__/
+*.pyc
+.env
+.venv/
+node_modules/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
