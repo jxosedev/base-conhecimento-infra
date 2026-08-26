@@ -52,7 +52,7 @@ theme:
   font:
     text: Inter
     code: JetBrains Mono
-  custom_dir: docs/overrides
+
 
 markdown_extensions:
   - abbr
