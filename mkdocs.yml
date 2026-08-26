@@ -24,6 +24,7 @@ theme:
         icon: material/brightness-4
         name: Alternar para modo claro
   features:
+    # Navegacao
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
@@ -31,12 +32,21 @@ theme:
     - navigation.path
     - navigation.top
     - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.footer
     - toc.follow
+    # Busca
     - search.suggest
     - search.highlight
+    - search.share
+    # Conteudo
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
+    - content.action.edit
+    - content.action.view
     - announce.dismiss
   icon:
     repo: fontawesome/brands/github
@@ -95,7 +105,7 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-  # --- PYMDOWNX: MATEMATICNA ---
+  # --- PYMDOWNX: MATEMATICA ---
   - pymdownx.arithmatex:
       generic: true
 
@@ -116,7 +126,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/empresa
+      link: https://github.com/jxosedev
     - icon: fontawesome/brands/slack
       link: https://empresa.slack.com
   generator: false
@@ -128,14 +138,46 @@ nav:
       - Como Contribuir: guia/como-contribuir.md
       - Padrao de Documentacao: guia/padrao-documentacao.md
   - Infraestrutura:
-      - Servidores: infra/servidores/README.md
-      - Rede: infra/rede/README.md
+      - Servidores:
+          - Indice: infra/servidores/README.md
+          - webapp-prod-01: infra/servidores/webapp-prod-01.md
+          - webapp-prod-02: infra/servidores/webapp-prod-02.md
+          - db-master-01: infra/servidores/db-master-01.md
+          - db-replica-01: infra/servidores/db-replica-01.md
+          - ci-runner-01: infra/servidores/ci-runner-01.md
+          - monitor-01: infra/servidores/monitor-01.md
+          - jump-prod-01: infra/servidores/jump-prod-01.md
+      - Rede:
+          - Indice: infra/rede/README.md
+          - Topologia: infra/rede/topologia.md
+          - Equipamentos: infra/rede/equipamentos.md
+          - VPN: infra/rede/vpn.md
+          - Troubleshooting:
+              - Queda de Link: infra/rede/troubleshooting-queda-link.md
+              - Lentidao: infra/rede/troubleshooting-lentidao.md
       - Armazenamento: infra/armazenamento/README.md
       - Cloud: infra/cloud/README.md
   - Runbooks:
-      - Incidentes: runbooks/incidentes/README.md
-      - Manutencoes: runbooks/manutencoes/README.md
-      - Backups: runbooks/backups/README.md
+      - Incidentes:
+          - Indice: runbooks/incidentes/README.md
+          - Queda de Link: runbooks/incidentes/queda-link.md
+          - Lentidao de Rede: runbooks/incidentes/lentidao-rede.md
+          - Servico Down: runbooks/incidentes/servico-down.md
+          - DDoS: runbooks/incidentes/ddos.md
+          - Disco Cheio: runbooks/incidentes/disco-cheio.md
+          - SSL Expirado: runbooks/incidentes/ssl-expirado.md
+      - Manutencoes:
+          - Indice: runbooks/manutencoes/README.md
+          - Manutencao de Servidores: runbooks/manutencoes/manutencao-servidores.md
+          - Patch Management: runbooks/manutencoes/patch-management.md
+          - Renovacao SSL: runbooks/manutencoes/renovacao-ssl.md
+          - Limpeza de Disco: runbooks/manutencoes/limpeza-disco.md
+      - Backups:
+          - Indice: runbooks/backups/README.md
+          - Backup de Banco: runbooks/backups/backup-banco.md
+          - Backup de Arquivos: runbooks/backups/backup-arquivos.md
+          - Verificacao: runbooks/backups/verificacao.md
+          - Restauracao: runbooks/backups/restauracao.md
   - Procedimentos (POP):
       - Onboarding: pop/onboarding.md
       - Offboarding: pop/offboarding.md

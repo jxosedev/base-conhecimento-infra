@@ -5,29 +5,64 @@ description: Runbooks de resposta a incidentes
 
 # Runbooks de Incidentes
 
-!!! danger "Em caso de incidente"
-    Siga o runbook correspondente e abra um chamado imediatamente.
+## Visão Geral
+
+Procedimentos padronizados para resposta a incidentes de infraestrutura.
 
 ---
 
-## Runbooks Disponiveis
+## Classificação de Incidentes
 
-| Incidente | Severidade | Runbook |
-|-----------|------------|---------|
-| Queda de link | P1 | [Queda de Link](queda-link.md) |
-| Lentidao de rede | P2 | [Lentidao](lentidao-rede.md) |
-| Servico indisponivel | P1 | [Servico Down](servico-down.md) |
-| Ataque DDoS | P1 | [DDoS](ddos.md) |
-| Falta de disco | P2 | [Disco Cheio](disco-cheio.md) |
-| Certificado SSL expirado | P2 | [SSL](ssl-expirado.md) |
+| Severidade | Descrição | Tempo Resposta | Exemplo |
+|------------|-----------|----------------|---------|
+| **P1 - Crítico** | Sistema indisponível | 15 min | Queda total, banco fora |
+| **P2 - Alto** | Funcionalidade degradada | 30 min | Lentidão grave, erro intermitente |
+| **P3 - Médio** | Funcionalidade parcial | 2 horas | Componente offline, alerta |
+| **P4 - Baixo** | Impacto mínimo | 8 horas | Bug não crítico, melhoria |
 
 ---
 
-## Fluxo Geral de Incidentes
+## Runbooks Disponíveis
 
-1. **Detectar**: Alerta automatizado ou relato de usuario
-2. **Classificar**: Definir severidade (P1-P4)
-3. **Notificar**: Canal `#incidents` no Slack
-4. **Diagnosticar**: Seguir runbook correspondente
-5. **Resolver**: Executar acoes corretivas
-6. **Documentar**: Preencher pos-incidente
+| Runbook | Severidade | Descrição |
+|---------|------------|-----------|
+| [Queda de Link](queda-link.md) | P1 | Queda de conectividade externa |
+| [Lentidão de Rede](lentidao-rede.md) | P2 | Lentidão na rede interna |
+| [Serviço Down](servico-down.md) | P1/P2 | Serviço indisponível |
+| [DDoS](ddos.md) | P1 | Ataque de negação de serviço |
+| [Disco Cheio](disco-cheio.md) | P2 | Espaço em disco insuficiente |
+| [SSL Expirado](ssl-expirado.md) | P3 | Certificado SSL vencido |
+
+---
+
+## Fluxo de Escalonamento
+
+```mermaid
+graph TD
+    A[Incidente Detectado] --> B{Severidade?}
+    B -->|P1| C[Acionar NOC + Eng. Sênior]
+    B -->|P2| D[Acionar NOC]
+    B -->|P3/E| E[Ticket + Agendamento]
+    C --> F[Conferência Bridge]
+    D --> G[Investigação]
+    F --> H[Resolução]
+    G --> H
+    H --> I[Post-mortem]
+```
+
+---
+
+## Contatos de Emergência
+
+| Função | Contato | Disponibilidade |
+|--------|---------|-----------------|
+| NOC 24h | `(11) 3000-1000` | 24/7 |
+| Eng. Sênior | `(11) 9999-8888` | 24/7 (P1) |
+| Gerente Infra | `(11) 9999-7777` | Horário comercial |
+
+---
+
+## Ver Também
+
+- [Manutenções](../manutencoes/README.md)
+- [Backups](../backups/README.md)

@@ -1,18 +1,58 @@
 ---
 title: Backups
-description: Procedimentos de backup e restauracao
+description: Runbacks de backup e restauração
 ---
 
-# Backups
+# Runbooks de Backup
 
-!!! warning "Politica de Backup"
-    Todos os servidores devem ter backup configurado conforme politica vigente.
+## Visão Geral
+
+Procedimentos de backup, verificação e restauração de dados.
 
 ---
 
-## Conteudo
+## Política de Backup
 
-- [Restauracao de Backup](restauracao.md)
-- [Verificacao de Integridade](verificacao.md)
-- [Backup de Banco de Dados](backup-banco.md)
-- [Backup de Arquivos](backup-arquivos.md)
+| Dados | Frequência | Retenção | Destino |
+|-------|------------|----------|---------|
+| Bancos de dados | Diário 02h | 30 dias | S3 |
+| Configurações | Semanal | 90 dias | Git |
+| Snapshots VM | Semanal | 4 semanas | vSphere |
+| Arquivos críticos | Diário | 30 dias | S3 |
+
+---
+
+## Runbooks Disponíveis
+
+| Runbook | Descrição |
+|---------|-----------|
+| [Backup de Banco](backup-banco.md) | Dump e restauração PostgreSQL |
+| [Backup de Arquivos](backup-arquivos.md) | Backup de diretórios críticos |
+| [Verificação de Backup](verificacao.md) | Teste de integridade |
+| [Restauração](restauracao.md) | Processo de restore |
+
+---
+
+## Verificação Automática
+
+| Verificação | Frequência | Ação |
+|-------------|------------|------|
+| Integrity check | Diário | Alerta Slack |
+| Restore test | Semanal | Relatório |
+| Capacity planning | Mensal | Relatório |
+
+---
+
+## Contatos
+
+| Função | Contato |
+|--------|---------|
+| Responsável Backup | `backup@empresa.com` |
+| NOC | `(11) 3000-1000` |
+
+---
+
+## Ver Também
+
+- [Incidentes](../incidentes/README.md)
+- [Manutenções](../manutencoes/README.md)
