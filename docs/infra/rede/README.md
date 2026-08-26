@@ -5,14 +5,45 @@ description: Documentacao e troubleshooting de rede
 
 # :material-network: Rede
 
-!!! info "Documentacao de Rede"
-    Guia de troubleshooting, topologia e equipamentos de rede.
+<div class="stat-grid" markdown>
+
+<div class="stat-card" markdown>
+
+<div class="stat-icon">:material-fire:</div>
+<div class="stat-number">1</div>
+<div class="stat-label">Firewall</div>
+
+</div>
+
+<div class="stat-card" markdown>
+
+<div class="stat-icon">:material-switch-network:</div>
+<div class="stat-number">1</div>
+<div class="stat-label">Core Switch</div>
+
+</div>
+
+<div class="stat-card" markdown>
+
+<div class="stat-icon">:material-router-network:</div>
+<div class="stat-number">1</div>
+<div class="stat-label">Roteador</div>
+
+</div>
+
+<div class="stat-card" markdown>
+
+<div class="stat-icon">:material-access-point-network:</div>
+<div class="stat-number">2</div>
+<div class="stat-label">Access Points</div>
+
+</div>
+
+</div>
 
 ---
 
-## :material-map-marker-path: Topologia
-
-A rede da empresa e dividida em segmentos:
+## :material-map-marker-path: Segmentos de Rede
 
 | Rede | CIDR | VLAN | Uso |
 |------|------|------|-----|
@@ -23,30 +54,46 @@ A rede da empresa e dividida em segmentos:
 
 ---
 
-## :material-switch-network: Equipamentos Principais
-
-| Equipamento | Modelo | IP |
-|-------------|--------|-----|
-| Firewall | Fortinet FortiGate 60F | 10.0.2.1 |
-| Core Switch | Cisco Catalyst 9300-48T | 10.0.3.10 |
-| Roteador | MikroTik CCR1036-12G-4S | 10.0.3.1 |
-
----
-
 ## :material-file-document: Conteudo
 
-- [Topologia Completa](topologia.md) - Diagrama e segmentos
-- [Equipamentos](equipamentos.md) - Lista detalhada de todos os equipamentos
-- [VPN e Acesso Remoto](vpn.md) - Configuracao de VPN
+<div class="quick-grid" markdown>
 
----
+<a href="topologia.md" class="quick-card" markdown>
 
-## :material-wrench: Troubleshooting
+<span class="qicon">:material-map-marker-path:</span>
+<span class="qtext"><span class="qtitle">Topologia Completa</span><span class="qdesc">Diagrama e segmentos de rede</span></span>
 
-| Problema | Runbook |
-|----------|---------|
-| Queda total de link | [Queda de Link](troubleshooting-queda-link.md) |
-| Lentidao na rede | [Lentidao de Rede](troubleshooting-lentidao.md) |
+</a>
+
+<a href="equipamentos.md" class="quick-card" markdown>
+
+<span class="qicon">:material-switch-network:</span>
+<span class="qtext"><span class="qtitle">Equipamentos</span><span class="qdesc">Firewall, switches, roteadores</span></span>
+
+</a>
+
+<a href="vpn.md" class="quick-card" markdown>
+
+<span class="qicon">:material-vpn:</span>
+<span class="qtext"><span class="qtitle">VPN e Acesso Remoto</span><span class="qdesc">Configuracao de VPN</span></span>
+
+</a>
+
+<a href="troubleshooting-queda-link.md" class="quick-card" markdown>
+
+<span class="qicon">:material-link-off:</span>
+<span class="qtext"><span class="qtitle">Queda de Link</span><span class="qdesc">Troubleshooting de link</span></span>
+
+</a>
+
+<a href="troubleshooting-lentidao.md" class="quick-card" markdown>
+
+<span class="qicon">:material-speedometer:</span>
+<span class="qtext"><span class="qtitle">Lentidao de Rede</span><span class="qdesc">Diagnosticos de lentidao</span></span>
+
+</a>
+
+</div>
 
 ---
 
@@ -54,27 +101,24 @@ A rede da empresa e dividida em segmentos:
 
 <div class="contact-grid" markdown>
 
-<div class="contact-card" markdown>
+<div class="contact-item" markdown>
 
-:material-email:{ .icon }
-
-**Eng. de Redes**<br>`rede@empresa.com`
-
-</div>
-
-<div class="contact-card" markdown>
-
-:material-phone:{ .icon }
-
-**NOC 24h**<br>`(11) 3000-1000`
+<span class="cicon">:material-email:</span>
+<span class="ctext"><strong>Eng. de Redes</strong>`rede@empresa.com`</span>
 
 </div>
 
-<div class="contact-card" markdown>
+<div class="contact-item" markdown>
 
-:material-phone:{ .icon }
+<span class="cicon">:material-phone:</span>
+<span class="ctext"><strong>NOC 24h</strong>`(11) 3000-1000`</span>
 
-**ISP Suporte**<br>`(11) 9999-9999`
+</div>
+
+<div class="contact-item" markdown>
+
+<span class="cicon">:material-phone:</span>
+<span class="ctext"><strong>ISP Suporte</strong>`(11) 9999-9999`</span>
 
 </div>
 

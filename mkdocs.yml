@@ -11,18 +11,22 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
-      accent: cyan
+      primary: custom
       toggle:
-        icon: material/brightness-7
-        name: Alternar para modo escuro
+        icon: material/weather-sunny
+        name: Modo escuro
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: cyan
+      primary: custom
       toggle:
-        icon: material/brightness-4
-        name: Alternar para modo claro
+        icon: material/weather-night
+        name: Modo claro
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/server-network
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -35,31 +39,18 @@ theme:
     - navigation.instant.progress
     - navigation.tracking
     - navigation.footer
-    - navigation.separator
     - toc.follow
     - search.suggest
     - search.highlight
-    - search.share
     - content.code.copy
-    - content.code.annotate
     - content.tabs.link
     - announce.dismiss
-  icon:
-    repo: fontawesome/brands/github
-    edit: material/pencil
-    view: material/eye
-    logo: material/server-network
-  font:
-    text: Inter
-    code: JetBrains Mono
-
 
 markdown_extensions:
   - abbr
   - admonition
   - attr_list
   - def_list
-  - footnotes
   - md_in_html
   - tables
   - toc:
@@ -76,7 +67,6 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.tabbed:
@@ -109,56 +99,56 @@ extra:
 
 nav:
   - Inicio: index.md
-  - ":material-book-open-variant: Guia de Uso":
+  - Guia de Uso:
       - Primeiros Passos: guia/primeiros-passos.md
       - Como Contribuir: guia/como-contribuir.md
       - Padrao de Documentacao: guia/padrao-documentacao.md
-  - ":material-server: Infraestrutura":
-      - ":material-server: Servidores":
-          - Lista de Servidores: infra/servidores/README.md
-          - ":material-desktop-classic: webapp-prod-01": infra/servidores/webapp-prod-01.md
-          - ":material-desktop-classic: webapp-prod-02": infra/servidores/webapp-prod-02.md
-          - ":material-database: db-master-01": infra/servidores/db-master-01.md
-          - ":material-database: db-replica-01": infra/servidores/db-replica-01.md
-          - ":material-cog: ci-runner-01": infra/servidores/ci-runner-01.md
-          - ":material-chart-line: monitor-01": infra/servidores/monitor-01.md
-          - ":material-lock: jump-prod-01": infra/servidores/jump-prod-01.md
-      - ":material-network: Rede":
-          - Rede - Visao Geral: infra/rede/README.md
-          - ":material-map-marker-path: Topologia": infra/rede/topologia.md
-          - ":material-switch-network: Equipamentos": infra/rede/equipamentos.md
-          - ":material-vpn: VPN e Acesso Remoto": infra/rede/vpn.md
-          - ":material-wrench: Troubleshooting":
-              - ":material-link-off: Queda de Link": infra/rede/troubleshooting-queda-link.md
-              - ":material-speedometer: Lentidao de Rede": infra/rede/troubleshooting-lentidao.md
-      - ":material-harddisk: Armazenamento": infra/armazenamento/README.md
-      - ":material-cloud: Cloud": infra/cloud/README.md
-  - ":material-ambulance: Runbooks":
-      - ":material-alert-circle: Incidentes":
-          - Runbooks de Incidentes: runbooks/incidentes/README.md
-          - ":material-link-off: Queda de Link": runbooks/incidentes/queda-link.md
-          - ":material-speedometer: Lentidao de Rede": runbooks/incidentes/lentidao-rede.md
-          - ":material-server-off: Servico Down": runbooks/incidentes/servico-down.md
-          - ":material-shield-half-full: DDoS": runbooks/incidentes/ddos.md
-          - ":material-harddisk: Disco Cheio": runbooks/incidentes/disco-cheio.md
-          - ":material-lock-open: SSL Expirado": runbooks/incidentes/ssl-expirado.md
-      - ":material-tools: Manutencoes":
-          - Runbooks de Manutencoes: runbooks/manutencoes/README.md
-          - ":material-server: Manutencao de Servidores": runbooks/manutencoes/manutencao-servidores.md
-          - ":material-update: Patch Management": runbooks/manutencoes/patch-management.md
-          - ":material-certificate: Renovacao SSL": runbooks/manutencoes/renovacao-ssl.md
-          - ":material-broom: Limpeza de Disco": runbooks/manutencoes/limpeza-disco.md
-      - ":material-database-sync: Backups":
-          - Runbooks de Backups: runbooks/backups/README.md
-          - ":material-database: Backup de Banco": runbooks/backups/backup-banco.md
-          - ":material-folder-zip: Backup de Arquivos": runbooks/backups/backup-arquivos.md
-          - ":material-check-circle: Verificacao": runbooks/backups/verificacao.md
-          - ":material-restore: Restauracao": runbooks/backups/restauracao.md
-  - ":material-clipboard-text: Procedimentos (POP)":
-      - ":material-account-plus: Onboarding": pop/onboarding.md
-      - ":material-account-minus: Offboarding": pop/offboarding.md
-      - ":material-key: Acesso a Producao": pop/acesso-producao.md
-  - ":material-shield-check: Politicas":
-      - ":material-security: Seguranca": politicas/seguranca.md
-      - ":material-cloud-download: Backup": politicas/backup.md
-      - ":material-phone-alert: Escalonamento": politicas/escalonamento.md
+  - Infraestrutura:
+      - Servidores:
+          - Visao Geral: infra/servidores/README.md
+          - webapp-prod-01: infra/servidores/webapp-prod-01.md
+          - webapp-prod-02: infra/servidores/webapp-prod-02.md
+          - db-master-01: infra/servidores/db-master-01.md
+          - db-replica-01: infra/servidores/db-replica-01.md
+          - ci-runner-01: infra/servidores/ci-runner-01.md
+          - monitor-01: infra/servidores/monitor-01.md
+          - jump-prod-01: infra/servidores/jump-prod-01.md
+      - Rede:
+          - Visao Geral: infra/rede/README.md
+          - Topologia: infra/rede/topologia.md
+          - Equipamentos: infra/rede/equipamentos.md
+          - VPN e Acesso Remoto: infra/rede/vpn.md
+          - Troubleshooting:
+              - Queda de Link: infra/rede/troubleshooting-queda-link.md
+              - Lentidao de Rede: infra/rede/troubleshooting-lentidao.md
+      - Armazenamento: infra/armazenamento/README.md
+      - Cloud: infra/cloud/README.md
+  - Runbooks:
+      - Incidentes:
+          - Visao Geral: runbooks/incidentes/README.md
+          - Queda de Link: runbooks/incidentes/queda-link.md
+          - Lentidao de Rede: runbooks/incidentes/lentidao-rede.md
+          - Servico Down: runbooks/incidentes/servico-down.md
+          - DDoS: runbooks/incidentes/ddos.md
+          - Disco Cheio: runbooks/incidentes/disco-cheio.md
+          - SSL Expirado: runbooks/incidentes/ssl-expirado.md
+      - Manutencoes:
+          - Visao Geral: runbooks/manutencoes/README.md
+          - Manutencao de Servidores: runbooks/manutencoes/manutencao-servidores.md
+          - Patch Management: runbooks/manutencoes/patch-management.md
+          - Renovacao SSL: runbooks/manutencoes/renovacao-ssl.md
+          - Limpeza de Disco: runbooks/manutencoes/limpeza-disco.md
+      - Backups:
+          - Visao Geral: runbooks/backups/README.md
+          - Backup de Banco: runbooks/backups/backup-banco.md
+          - Backup de Arquivos: runbooks/backups/backup-arquivos.md
+          - Verificacao: runbooks/backups/verificacao.md
+          - Restauracao: runbooks/backups/restauracao.md
+  - Procedimentos (POP):
+      - Onboarding: pop/onboarding.md
+      - Offboarding: pop/offboarding.md
+      - Acesso a Producao: pop/acesso-producao.md
+  - Politicas:
+      - Seguranca: politicas/seguranca.md
+      - Backup: politicas/backup.md
+      - Escalonamento: politicas/escalonamento.md
