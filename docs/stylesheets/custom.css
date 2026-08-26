@@ -1,0 +1,284 @@
+/* ============================================
+   CUSTOM STYLES - Base de Conhecimento
+   ============================================ */
+
+/* --- NAV SIDEBAR --- */
+.md-nav__link {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.md-nav__link:hover {
+  background: rgba(121, 134, 203, 0.1);
+}
+
+.md-nav--primary .md-nav__item--nested > .md-nav__link {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  margin-top: 0.5rem;
+}
+
+/* --- TABS NAVIGATION --- */
+.md-tabs {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+.md-tabs__link {
+  font-weight: 500;
+}
+
+.md-tabs__link--active {
+  border-bottom: 3px solid var(--md-accent-fg-color);
+}
+
+/* --- CONTENT CARDS --- */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+  border-left-width: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-left-color: #5c6bc0;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: #26a69a;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-left-color: #ffa726;
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-left-color: #ef5350;
+}
+
+/* --- TABLES --- */
+.md-typeset table:not([class]) {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: rgba(121, 134, 203, 0.05);
+}
+
+/* --- HEADINGS --- */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  border-bottom: 2px solid var(--md-primary-fg-color--lightest);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+/* --- CODE BLOCKS --- */
+.md-typeset pre {
+  border-radius: 10px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.md-typeset code {
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.85em;
+}
+
+/* --- SIDEBAR SECTIONS --- */
+.md-nav--primary .md-nav__title {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 700;
+  padding: 1rem 1.2rem;
+  border-radius: 0;
+}
+
+/* --- SEPARATOR BETWEEN SECTIONS --- */
+.md-nav__item--nested::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--md-default-fg-color--lightest);
+  margin: 0.5rem 1rem;
+}
+
+/* --- SEARCH BAR --- */
+.md-search__form {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* --- FOOTER NAVIGATION --- */
+.md-footer-nav__link {
+  border-radius: 8px;
+  padding: 1rem;
+  transition: background 0.2s ease;
+}
+
+.md-footer-nav__link:hover {
+  background: rgba(121, 134, 203, 0.1);
+}
+
+/* --- HERO/BANNER (index.md) --- */
+.md-typeset .hero-banner {
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, #4527a0 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.md-typeset .hero-banner h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.md-typeset .hero-banner p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+}
+
+/* --- STAT CARDS --- */
+.md-typeset .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.md-typeset .stat-card {
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-typeset .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.md-typeset .stat-card .stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset .stat-card .stat-label {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.25rem;
+}
+
+/* --- QUICK LINK CARDS --- */
+.md-typeset .quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.md-typeset .quick-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--md-default-fg-color);
+  transition: all 0.2s ease;
+}
+
+.md-typeset .quick-link:hover {
+  border-color: var(--md-primary-fg-color);
+  background: rgba(121, 134, 203, 0.05);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.md-typeset .quick-link .icon {
+  font-size: 1.5rem;
+  color: var(--md-primary-fg-color);
+}
+
+/* --- CONTACT TABLE --- */
+.md-typeset .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.md-typeset .contact-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .contact-card .icon {
+  font-size: 1.5rem;
+  color: var(--md-primary-fg-color);
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-code-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary-fg-color--light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-primary-fg-color);
+}

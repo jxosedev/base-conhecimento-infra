@@ -11,20 +11,19 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: teal
+      primary: deep purple
+      accent: cyan
       toggle:
         icon: material/brightness-7
         name: Alternar para modo escuro
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: teal
+      primary: deep purple
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: Alternar para modo claro
   features:
-    # Navegacao
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
@@ -36,29 +35,26 @@ theme:
     - navigation.instant.progress
     - navigation.tracking
     - navigation.footer
+    - navigation.separator
     - toc.follow
-    # Busca
     - search.suggest
     - search.highlight
     - search.share
-    # Conteudo
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
-    - content.action.edit
-    - content.action.view
     - announce.dismiss
   icon:
     repo: fontawesome/brands/github
     edit: material/pencil
     view: material/eye
-    logo: material/server
+    logo: material/server-network
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Inter
+    code: JetBrains Mono
+  custom_dir: docs/overrides
 
 markdown_extensions:
-  # --- PYTHON-MARKDOWN BASE ---
   - abbr
   - admonition
   - attr_list
@@ -69,10 +65,6 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
-      permalink_class: headerlink
-      permalink_title: "Link direto"
-
-  # --- PYMDOWNX: BLOCOS E ESTRUTURA ---
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
@@ -87,29 +79,15 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.snippets:
-      auto_append:
-        - docs/includes/snippets.md
-
-  # --- PYMDOWNX: TABELAS E LISTAS ---
   - pymdownx.tabbed:
       alternate_style: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
-
-  # --- PYMDOWNX: EMOJI E ICONES ---
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-  # --- PYMDOWNX: MATEMATICA ---
   - pymdownx.arithmatex:
       generic: true
-
-  # --- PYMDOWNX: OUTROS ---
   - pymdownx.critic
   - pymdownx.escapeall
   - pymdownx.magiclink:
@@ -117,72 +95,70 @@ markdown_extensions:
       user: jxosedev
       repo: base-conhecimento-infra
 
-extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
-
 plugins:
   - search
+
+extra_css:
+  - stylesheets/custom.css
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jxosedev
-    - icon: fontawesome/brands/slack
-      link: https://empresa.slack.com
   generator: false
 
 nav:
   - Inicio: index.md
-  - Guia de Uso:
+  - ":material-book-open-variant: Guia de Uso":
       - Primeiros Passos: guia/primeiros-passos.md
       - Como Contribuir: guia/como-contribuir.md
       - Padrao de Documentacao: guia/padrao-documentacao.md
-  - Infraestrutura:
-      - Servidores:
-          - Indice: infra/servidores/README.md
-          - webapp-prod-01: infra/servidores/webapp-prod-01.md
-          - webapp-prod-02: infra/servidores/webapp-prod-02.md
-          - db-master-01: infra/servidores/db-master-01.md
-          - db-replica-01: infra/servidores/db-replica-01.md
-          - ci-runner-01: infra/servidores/ci-runner-01.md
-          - monitor-01: infra/servidores/monitor-01.md
-          - jump-prod-01: infra/servidores/jump-prod-01.md
-      - Rede:
-          - Indice: infra/rede/README.md
-          - Topologia: infra/rede/topologia.md
-          - Equipamentos: infra/rede/equipamentos.md
-          - VPN: infra/rede/vpn.md
-          - Troubleshooting:
-              - Queda de Link: infra/rede/troubleshooting-queda-link.md
-              - Lentidao: infra/rede/troubleshooting-lentidao.md
-      - Armazenamento: infra/armazenamento/README.md
-      - Cloud: infra/cloud/README.md
-  - Runbooks:
-      - Incidentes:
-          - Indice: runbooks/incidentes/README.md
-          - Queda de Link: runbooks/incidentes/queda-link.md
-          - Lentidao de Rede: runbooks/incidentes/lentidao-rede.md
-          - Servico Down: runbooks/incidentes/servico-down.md
-          - DDoS: runbooks/incidentes/ddos.md
-          - Disco Cheio: runbooks/incidentes/disco-cheio.md
-          - SSL Expirado: runbooks/incidentes/ssl-expirado.md
-      - Manutencoes:
-          - Indice: runbooks/manutencoes/README.md
-          - Manutencao de Servidores: runbooks/manutencoes/manutencao-servidores.md
-          - Patch Management: runbooks/manutencoes/patch-management.md
-          - Renovacao SSL: runbooks/manutencoes/renovacao-ssl.md
-          - Limpeza de Disco: runbooks/manutencoes/limpeza-disco.md
-      - Backups:
-          - Indice: runbooks/backups/README.md
-          - Backup de Banco: runbooks/backups/backup-banco.md
-          - Backup de Arquivos: runbooks/backups/backup-arquivos.md
-          - Verificacao: runbooks/backups/verificacao.md
-          - Restauracao: runbooks/backups/restauracao.md
-  - Procedimentos (POP):
-      - Onboarding: pop/onboarding.md
-      - Offboarding: pop/offboarding.md
-      - Acesso a Producao: pop/acesso-producao.md
-  - Politicas:
-      - Seguranca: politicas/seguranca.md
-      - Backup: politicas/backup.md
-      - Escalonamento: politicas/escalonamento.md
+  - ":material-server: Infraestrutura":
+      - ":material-server: Servidores":
+          - Lista de Servidores: infra/servidores/README.md
+          - ":material-desktop-classic: webapp-prod-01": infra/servidores/webapp-prod-01.md
+          - ":material-desktop-classic: webapp-prod-02": infra/servidores/webapp-prod-02.md
+          - ":material-database: db-master-01": infra/servidores/db-master-01.md
+          - ":material-database: db-replica-01": infra/servidores/db-replica-01.md
+          - ":material-cog: ci-runner-01": infra/servidores/ci-runner-01.md
+          - ":material-chart-line: monitor-01": infra/servidores/monitor-01.md
+          - ":material-lock: jump-prod-01": infra/servidores/jump-prod-01.md
+      - ":material-network: Rede":
+          - Rede - Visao Geral: infra/rede/README.md
+          - ":material-map-marker-path: Topologia": infra/rede/topologia.md
+          - ":material-switch-network: Equipamentos": infra/rede/equipamentos.md
+          - ":material-vpn: VPN e Acesso Remoto": infra/rede/vpn.md
+          - ":material-wrench: Troubleshooting":
+              - ":material-link-off: Queda de Link": infra/rede/troubleshooting-queda-link.md
+              - ":material-speedometer: Lentidao de Rede": infra/rede/troubleshooting-lentidao.md
+      - ":material-harddisk: Armazenamento": infra/armazenamento/README.md
+      - ":material-cloud: Cloud": infra/cloud/README.md
+  - ":material-ambulance: Runbooks":
+      - ":material-alert-circle: Incidentes":
+          - Runbooks de Incidentes: runbooks/incidentes/README.md
+          - ":material-link-off: Queda de Link": runbooks/incidentes/queda-link.md
+          - ":material-speedometer: Lentidao de Rede": runbooks/incidentes/lentidao-rede.md
+          - ":material-server-off: Servico Down": runbooks/incidentes/servico-down.md
+          - ":material-shield-half-full: DDoS": runbooks/incidentes/ddos.md
+          - ":material-harddisk: Disco Cheio": runbooks/incidentes/disco-cheio.md
+          - ":material-lock-open: SSL Expirado": runbooks/incidentes/ssl-expirado.md
+      - ":material-tools: Manutencoes":
+          - Runbooks de Manutencoes: runbooks/manutencoes/README.md
+          - ":material-server: Manutencao de Servidores": runbooks/manutencoes/manutencao-servidores.md
+          - ":material-update: Patch Management": runbooks/manutencoes/patch-management.md
+          - ":material-certificate: Renovacao SSL": runbooks/manutencoes/renovacao-ssl.md
+          - ":material-broom: Limpeza de Disco": runbooks/manutencoes/limpeza-disco.md
+      - ":material-database-sync: Backups":
+          - Runbooks de Backups: runbooks/backups/README.md
+          - ":material-database: Backup de Banco": runbooks/backups/backup-banco.md
+          - ":material-folder-zip: Backup de Arquivos": runbooks/backups/backup-arquivos.md
+          - ":material-check-circle: Verificacao": runbooks/backups/verificacao.md
+          - ":material-restore: Restauracao": runbooks/backups/restauracao.md
+  - ":material-clipboard-text: Procedimentos (POP)":
+      - ":material-account-plus: Onboarding": pop/onboarding.md
+      - ":material-account-minus: Offboarding": pop/offboarding.md
+      - ":material-key: Acesso a Producao": pop/acesso-producao.md
+  - ":material-shield-check: Politicas":
+      - ":material-security: Seguranca": politicas/seguranca.md
+      - ":material-cloud-download: Backup": politicas/backup.md
+      - ":material-phone-alert: Escalonamento": politicas/escalonamento.md

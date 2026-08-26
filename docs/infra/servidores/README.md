@@ -3,7 +3,7 @@ title: Servidores
 description: Documentacao tecnica dos servidores da infraestrutura
 ---
 
-# Servidores
+# :material-server: Servidores
 
 !!! info "Indice de Servidores"
     Documentacao tecnica completa de cada servidor: hardware, SO, servicos, backups e acesso.
@@ -14,17 +14,38 @@ description: Documentacao tecnica dos servidores da infraestrutura
 
 | Hostname | Ambiente | IP | SO | Status |
 |----------|----------|----|-----|--------|
-| [webapp-prod-01](webapp-prod-01.md) | Producao | 10.10.1.50 | Ubuntu 22.04 | :material-check-circle: Ativo |
-| [webapp-prod-02](webapp-prod-02.md) | Producao | 10.10.1.51 | Ubuntu 22.04 | :material-check-circle: Ativo |
-| [db-master-01](db-master-01.md) | Producao | 10.10.2.10 | Ubuntu 22.04 | :material-check-circle: Ativo |
-| [db-replica-01](db-replica-01.md) | Producao | 10.10.2.11 | Ubuntu 22.04 | :material-check-circle: Ativo |
-| [ci-runner-01](ci-runner-01.md) | Dev | 10.10.3.20 | Ubuntu 22.04 | :material-check-circle: Ativo |
-| [monitor-01](monitor-01.md) | Producao | 10.10.4.5 | Ubuntu 22.04 | :material-check-circle: Ativo |
-| [jump-prod-01](jump-prod-01.md) | Producao | 10.10.0.5 | Ubuntu 22.04 | :material-check-circle: Ativo |
+| [webapp-prod-01](webapp-prod-01.md) | Producao | 10.10.1.50 | Ubuntu 22.04 | :material-check-circle:{ .green } Ativo |
+| [webapp-prod-02](webapp-prod-02.md) | Producao | 10.10.1.51 | Ubuntu 22.04 | :material-check-circle:{ .green } Ativo |
+| [db-master-01](db-master-01.md) | Producao | 10.10.2.10 | Ubuntu 22.04 | :material-check-circle:{ .green } Ativo |
+| [db-replica-01](db-replica-01.md) | Producao | 10.10.2.11 | Ubuntu 22.04 | :material-check-circle:{ .green } Ativo |
+| [ci-runner-01](ci-runner-01.md) | Dev | 10.10.3.20 | Ubuntu 22.04 | :material-check-circle:{ .green } Ativo |
+| [monitor-01](monitor-01.md) | Producao | 10.10.4.5 | Ubuntu 22.04 | :material-check-circle:{ .green } Ativo |
+| [jump-prod-01](jump-prod-01.md) | Producao | 10.10.0.5 | Ubuntu 22.04 | :material-check-circle:{ .green } Ativo |
 
 ---
 
-## Como criar documentacao de um novo servidor
+## :material-network: Rede
+
+| Servidor | IP | Uplink |
+|----------|-----|--------|
+| webapp-prod-01 | 10.10.1.50 | bond0 (2x 1G) |
+| webapp-prod-02 | 10.10.1.51 | bond0 (2x 1G) |
+| db-master-01 | 10.10.2.10 | bond0 (2x 10G) |
+| db-replica-01 | 10.10.2.11 | bond0 (2x 10G) |
+
+---
+
+## :material-content-save: Backups
+
+| Servidor | Tipo | Frequencia | Destino |
+|----------|------|------------|---------|
+| webapp-* | DB dump | Diario | S3 |
+| db-* | pg_dump + WAL | Diario + Continuo | S3 |
+| monitor-01 | Config | Semanal | Git |
+
+---
+
+## :material-tools: Como criar documentacao de um novo servidor
 
 !!! tip "Use o template"
     1. Copie o arquivo `docs/assets/templates/template-a-servidor.md`
