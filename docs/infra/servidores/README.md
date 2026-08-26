@@ -5,41 +5,16 @@ description: Documentacao tecnica dos servidores da infraestrutura
 
 # :material-server: Servidores
 
-<div class="stat-grid" markdown>
+!!! info "Indice de Servidores"
+    Documentacao tecnica completa de cada servidor: hardware, SO, servicos, backups e acesso.
 
-<div class="stat-card" markdown>
+---
 
-<div class="stat-icon">:material-check-circle:</div>
-<div class="stat-number">7</div>
-<div class="stat-label">Ativos</div>
+## Resumo
 
-</div>
-
-<div class="stat-card" markdown>
-
-<div class="stat-icon">:material-os:</div>
-<div class="stat-number">7</div>
-<div class="stat-label">Ubuntu 22.04</div>
-
-</div>
-
-<div class="stat-card" markdown>
-
-<div class="stat-icon">:material-ip-network:</div>
-<div class="stat-number">6</div>
-<div class="stat-label">Producao</div>
-
-</div>
-
-<div class="stat-card" markdown>
-
-<div class="stat-icon">:material-test-tube:</div>
-<div class="stat-number">1</div>
-<div class="stat-label">Desenvolvimento</div>
-
-</div>
-
-</div>
+| Status | SO | Producao | Dev |
+|--------|-----|----------|-----|
+| **7** ativos | Ubuntu 22.04 | **6** | **1** |
 
 ---
 

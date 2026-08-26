@@ -5,41 +5,16 @@ description: Documentacao e troubleshooting de rede
 
 # :material-network: Rede
 
-<div class="stat-grid" markdown>
+!!! info "Documentacao de Rede"
+    Guia de troubleshooting, topologia e equipamentos de rede.
 
-<div class="stat-card" markdown>
+---
 
-<div class="stat-icon">:material-fire:</div>
-<div class="stat-number">1</div>
-<div class="stat-label">Firewall</div>
+## Resumo
 
-</div>
-
-<div class="stat-card" markdown>
-
-<div class="stat-icon">:material-switch-network:</div>
-<div class="stat-number">1</div>
-<div class="stat-label">Core Switch</div>
-
-</div>
-
-<div class="stat-card" markdown>
-
-<div class="stat-icon">:material-router-network:</div>
-<div class="stat-number">1</div>
-<div class="stat-label">Roteador</div>
-
-</div>
-
-<div class="stat-card" markdown>
-
-<div class="stat-icon">:material-access-point-network:</div>
-<div class="stat-number">2</div>
-<div class="stat-label">Access Points</div>
-
-</div>
-
-</div>
+| Firewall | Core Switch | Roteador | Access Points |
+|:---:|:---:|:---:|:---:|
+| **1** | **1** | **1** | **2** |
 
 ---
 
@@ -56,70 +31,20 @@ description: Documentacao e troubleshooting de rede
 
 ## :material-file-document: Conteudo
 
-<div class="quick-grid" markdown>
-
-<a href="topologia.md" class="quick-card" markdown>
-
-<span class="qicon">:material-map-marker-path:</span>
-<span class="qtext"><span class="qtitle">Topologia Completa</span><span class="qdesc">Diagrama e segmentos de rede</span></span>
-
-</a>
-
-<a href="equipamentos.md" class="quick-card" markdown>
-
-<span class="qicon">:material-switch-network:</span>
-<span class="qtext"><span class="qtitle">Equipamentos</span><span class="qdesc">Firewall, switches, roteadores</span></span>
-
-</a>
-
-<a href="vpn.md" class="quick-card" markdown>
-
-<span class="qicon">:material-vpn:</span>
-<span class="qtext"><span class="qtitle">VPN e Acesso Remoto</span><span class="qdesc">Configuracao de VPN</span></span>
-
-</a>
-
-<a href="troubleshooting-queda-link.md" class="quick-card" markdown>
-
-<span class="qicon">:material-link-off:</span>
-<span class="qtext"><span class="qtitle">Queda de Link</span><span class="qdesc">Troubleshooting de link</span></span>
-
-</a>
-
-<a href="troubleshooting-lentidao.md" class="quick-card" markdown>
-
-<span class="qicon">:material-speedometer:</span>
-<span class="qtext"><span class="qtitle">Lentidao de Rede</span><span class="qdesc">Diagnosticos de lentidao</span></span>
-
-</a>
-
-</div>
+| Pagina | Descricao |
+|--------|-----------|
+| [:material-map-marker-path: Topologia Completa](topologia.md) | Diagrama e segmentos de rede |
+| [:material-switch-network: Equipamentos](equipamentos.md) | Firewall, switches, roteadores |
+| [:material-vpn: VPN e Acesso Remoto](vpn.md) | Configuracao de VPN |
+| [:material-link-off: Queda de Link](troubleshooting-queda-link.md) | Troubleshooting de link |
+| [:material-speedometer: Lentidao de Rede](troubleshooting-lentidao.md) | Diagnosticos de lentidao |
 
 ---
 
 ## :material-phone: Contatos da Equipe de Redes
 
-<div class="contact-grid" markdown>
-
-<div class="contact-item" markdown>
-
-<span class="cicon">:material-email:</span>
-<span class="ctext"><strong>Eng. de Redes</strong>`rede@empresa.com`</span>
-
-</div>
-
-<div class="contact-item" markdown>
-
-<span class="cicon">:material-phone:</span>
-<span class="ctext"><strong>NOC 24h</strong>`(11) 3000-1000`</span>
-
-</div>
-
-<div class="contact-item" markdown>
-
-<span class="cicon">:material-phone:</span>
-<span class="ctext"><strong>ISP Suporte</strong>`(11) 9999-9999`</span>
-
-</div>
-
-</div>
+| Funcao | Contato |
+|--------|---------|
+| :material-email: **Eng. de Redes** | `rede@empresa.com` |
+| :material-phone: **NOC 24h** | `(11) 3000-1000` |
+| :material-phone: **ISP Suporte** | `(11) 9999-9999` |
