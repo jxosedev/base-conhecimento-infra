@@ -67,6 +67,9 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      auto_append:
+        - includes/snippets.md
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.tabbed:
@@ -87,6 +90,12 @@ markdown_extensions:
 
 plugins:
   - search
+
+# Arquivos que ficam em docs/ mas nao sao paginas de navegacao
+# (templates reutilizaveis e includes de abreviacoes).
+exclude_docs: |
+  /assets/templates/
+  /includes/
 
 extra_css:
   - stylesheets/custom.css
@@ -121,9 +130,17 @@ nav:
           - Troubleshooting:
               - Queda de Link: infra/rede/troubleshooting-queda-link.md
               - Lentidao de Rede: infra/rede/troubleshooting-lentidao.md
-      - Armazenamento: infra/armazenamento/README.md
-      - Cloud: infra/cloud/README.md
+      - Armazenamento:
+          - Visao Geral: infra/armazenamento/README.md
+          - Estrutura de Pastas: infra/armazenamento/estrutura-pastas.md
+          - Ferramentas de Backup: infra/armazenamento/ferramentas-backup.md
+      - Cloud:
+          - Visao Geral: infra/cloud/README.md
+          - Conta AWS: infra/cloud/aws.md
+          - Conta GCP: infra/cloud/gcp.md
+          - Politica de Custos: infra/cloud/politica-custos.md
   - Runbooks:
+      - Visao Geral: runbooks/README.md
       - Incidentes:
           - Visao Geral: runbooks/incidentes/README.md
           - Queda de Link: runbooks/incidentes/queda-link.md

@@ -98,4 +98,4 @@ graph TD
 
 - [Equipamentos de Rede](equipamentos.md)
 - [Topologia de Rede](topologia.md)
-- [Runbook de Incidentes](../../../runbooks/incidentes/README.md)
+- [Runbook de Incidentes](../../runbooks/incidentes/README.md)

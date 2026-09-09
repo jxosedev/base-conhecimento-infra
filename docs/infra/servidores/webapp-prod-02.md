@@ -59,4 +59,4 @@ ssh -J ubuntu@10.10.0.5 ubuntu@10.10.1.51
 
 ## Ver Também
 
-- [Lista de Servidores](../README.md)
+- [Lista de Servidores](README.md)

@@ -50,4 +50,4 @@ ssh ubuntu@10.10.4.5
 
 ## Ver Também
 
-- [Lista de Servidores](../README.md)
+- [Lista de Servidores](README.md)

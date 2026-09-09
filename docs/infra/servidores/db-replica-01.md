@@ -57,4 +57,4 @@ psql -h 10.10.2.11 -U postgres
 
 ## Ver Também
 
-- [Lista de Servidores](../README.md)
+- [Lista de Servidores](README.md)
