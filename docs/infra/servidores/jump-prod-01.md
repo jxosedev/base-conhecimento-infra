@@ -63,4 +63,4 @@ http://10.10.0.5:8080
 
 ## Ver Também
 
-- [Lista de Servidores](../README.md)
+- [Lista de Servidores](README.md)

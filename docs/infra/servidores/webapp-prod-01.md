@@ -55,7 +55,7 @@ ssh -J ubuntu@10.10.0.5 ubuntu@10.10.1.50
 
 | Tipo | Frequência | Retenção | Destino |
 |------|------------|----------|---------|
-| Database dump | Diário 02h | 30 dias | S3 |
+| Uploads / assets | Diário 02h | 30 dias | S3 |
 | Config files | Semanal | 90 dias | Git |
 | Snapshot VM | Semanal | 4 semanas | vSphere |
 
@@ -80,5 +80,5 @@ ssh -J ubuntu@10.10.0.5 ubuntu@10.10.1.50
 
 ## Ver Também
 
-- [Lista de Servidores](../README.md)
-- [Runbook de Incidentes](../../../runbooks/incidentes/README.md)
+- [Lista de Servidores](README.md)
+- [Runbook de Incidentes](../../runbooks/incidentes/README.md)

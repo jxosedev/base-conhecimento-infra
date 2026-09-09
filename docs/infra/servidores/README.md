@@ -36,7 +36,7 @@ description: Documentacao tecnica dos servidores da infraestrutura
 
 | Servidor | Tipo | Frequencia | Destino |
 |----------|------|------------|---------|
-| webapp-* | DB dump | Diario 02h | S3 |
+| webapp-* | Uploads / config | Diario 02h | S3 |
 | db-* | pg_dump + WAL | Diario + Continuo | S3 |
 | monitor-01 | Config | Semanal | Git |
 

@@ -48,4 +48,4 @@ ssh ubuntu@10.10.3.20
 
 ## Ver Também
 
-- [Lista de Servidores](../README.md)
+- [Lista de Servidores](README.md)
